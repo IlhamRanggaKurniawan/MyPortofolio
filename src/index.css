@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%; /* Hitam pekat */
+    --foreground: 0 0% 90%; /* Putih abu-abu terang */
+
+    --card: 0 0% 10%; /* Abu-abu gelap */
+    --card-foreground: 0 0% 90%; /* Putih terang */
+
+    --popover: 0 0% 8%; /* Hitam sangat gelap */
+    --popover-foreground: 0 0% 85%; /* Putih abu-abu terang */
+
+    --primary: 0 0% 90%; /* Putih terang */
+    --primary-foreground: 0 0% 10%; /* Hitam pekat */
+
+    --secondary: 0 0% 15%; /* Abu-abu sangat gelap */
+    --secondary-foreground: 0 0% 80%; /* Abu-abu terang */
+
+    --muted: 0 0% 20%; /* Abu-abu gelap */
+    --muted-foreground: 0 0% 65%; /* Abu-abu keputihan */
+
+    --accent: 220 15% 20%; /* Abu-abu kebiruan gelap */
+    --accent-foreground: 0 0% 90%; /* Putih terang */
+
+    --destructive: 0 65% 55%; /* Merah muted */
+    --destructive-foreground: 0 0% 95%; /* Putih terang */
+
+    --border: 0 0% 15%; /* Abu-abu sangat gelap */
+    --input: 0 0% 15%; /* Sama seperti border */
+    --ring: 0 0% 90%; /* Putih abu-abu terang */
+
+    --header-background: 0 0% 10%; /* Hitam untuk header */
+    --header-foreground: 0 0% 90%; /* Putih terang */
+
+    --radius: 0.5rem; /* Border radius tetap kecil dan bersih */
+  }
+
+  .dark {
+    --background: 0 0% 5%; /* Hitam pekat */
+    --foreground: 0 0% 90%; /* Putih terang */
+
+    --card: 0 0% 15%; /* Abu-abu sangat gelap */
+    --card-foreground: 0 0% 85%; /* Abu-abu terang */
+
+    --popover: 0 0% 10%; /* Hitam sangat gelap */
+    --popover-foreground: 0 0% 85%; /* Putih abu-abu terang */
+
+    --primary: 0 0% 90%; /* Putih terang */
+    --primary-foreground: 0 0% 10%; /* Hitam pekat */
+
+    --secondary: 0 0% 15%; /* Abu-abu gelap */
+    --secondary-foreground: 0 0% 85%; /* Abu-abu terang */
+
+    --muted: 0 0% 10%; /* Abu-abu sangat gelap */
+    --muted-foreground: 0 0% 65%; /* Abu-abu terang */
+
+    --accent: 220 15% 15%; /* Abu-abu kebiruan sangat gelap */
+    --accent-foreground: 0 0% 90%; /* Putih terang */
+
+    --destructive: 0 65% 55%; /* Merah muted */
+    --destructive-foreground: 0 0% 90%; /* Putih terang */
+
+    --border: 0 0% 15%; /* Abu-abu sangat gelap */
+    --input: 0 0% 15%; /* Sama seperti border */
+    --ring: 0 0% 85%; /* Putih abu-abu terang */
+
+    --header-background: 0 0% 10%; /* Hitam untuk header */
+    --header-foreground: 0 0% 85%; /* Putih terang */
+
+    --radius: 0.5rem; /* Border radius tetap kecil dan bersih */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
