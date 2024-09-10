@@ -3,7 +3,7 @@ const ProjectStatus = ({ status }: { status: "development" | "staging" | "produc
 
     return (
         <div className={`w-36 border ${color} rounded-full flex px-2 items-center justify-center gap-3`}>
-                {status}
+            {status}
         </div>
     )
 }
