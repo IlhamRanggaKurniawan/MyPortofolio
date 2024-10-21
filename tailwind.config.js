@@ -5,8 +5,41 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      perspective: {
+        'none': 'none',
+        '500': '500px',
+        '1000': '1000px',
+        '2000': '2000px',
+      }
+    }
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        // Utility untuk perspective
+        '.perspective-none': {
+          perspective: 'none',
+        },
+        '.perspective-500': {
+          perspective: '500px',
+        },
+        '.perspective-1000': {
+          perspective: '1000px',
+        },
+        '.perspective-2000': {
+          perspective: '2000px',
+        },
+        // Utility untuk transform-style
+        '.transform-preserve-3d': {
+          'transform-style': 'preserve-3d',
+        },
+        '.transform-flat': {
+          'transform-style': 'flat',
+        },
+      };
 
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }
+  ],
+}
