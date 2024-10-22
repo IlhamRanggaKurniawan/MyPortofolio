@@ -56,8 +56,8 @@ const SplashScreen = () => {
     })
 
     return (
-        <>
-            <div className='fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full'>
+        <div className='z-50 fixed'>
+            <div className='fixed z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full'>
                 <div className="text flex w-full items-center justify-center text-xl font-bold sm:text-3xl text-[#795757]">
                     <motion.h1 className='whitespace-nowrap fixed pr-44 sm:pr-48 mr-2'
                         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const SplashScreen = () => {
                 <div className='top-bar absolute top-0 w-full h-[50vh] bg-[#FFF0D1]'></div>
                 <div className='bottom-bar absolute bottom-0 w-full h-[50vh] bg-[#FFF0D1]'></div>
             </div>
-        </>
+        </div>
     );
 };
 

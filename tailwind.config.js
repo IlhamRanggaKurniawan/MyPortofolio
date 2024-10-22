@@ -37,6 +37,27 @@ export default {
         '.transform-flat': {
           'transform-style': 'flat',
         },
+
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
+        },
+        '.backface-visible': {
+          'backface-visibility': 'visible',
+        },
+
+        '.rotate-x-180': {
+          'transform': 'rotateX(180deg)',
+        },
+        '.rotate-x-90': {
+          'transform': 'rotateX(90deg)',
+        },
+
+        '.bg-size-600': {
+          'background-size': '600% 600%',
+        },
+        '.bg-position-inherit': {
+          'background-position': 'inherit',
+        },
       };
 
       addUtilities(newUtilities, ['responsive', 'hover']);
