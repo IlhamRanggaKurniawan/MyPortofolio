@@ -10,6 +10,8 @@
     "start": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^11.11.9",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",
