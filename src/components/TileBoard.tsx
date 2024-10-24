@@ -38,7 +38,7 @@ const TileBoard = () => {
 
     return (
         <div className='w-full h-screen bg-black'>
-            <nav className="absolute top-0 left-0 w-full p-8 z-20">
+            <nav className="absolute top-0 right-0 pr-8 pt-8 z-20">
                 <button className="bg-black text-white border-none rounded px-4 py-2 uppercase" onClick={() => flipAllTiles()}>Flip tiles</button>
             </nav>
             <div className='w-full h-full p-4 flex flex-col gap-1 perspective-100 relative z-10'>

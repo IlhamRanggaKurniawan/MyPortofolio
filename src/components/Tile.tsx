@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react'
-import tes from "../assets/expo-logo.webp"
+import { useRef, useState } from 'react'
 import ilhamRangga from "../assets/ilham-rangga.png"
 import textImage from "../assets/text-image.png"
 import gsap from 'gsap'
