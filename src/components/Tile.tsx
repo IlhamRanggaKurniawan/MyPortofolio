@@ -26,7 +26,6 @@ const Tile = ({ row, col, index, isFlipped }: { row: number, col: number, index:
         const currentTime = Date.now()
         if(currentTime - lastEnterTime > 1000) {
             setLastEnterTime(currentTime)
-            console.log(isFlipped)
 
             const tile = tileRef.current
             if(!tile) return

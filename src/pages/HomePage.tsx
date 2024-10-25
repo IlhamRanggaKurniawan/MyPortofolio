@@ -8,11 +8,9 @@ import ClockAnimation from '../components/ClockAnimation'
 const HomePage = () => {
 
   return (
-    <div className='bg-[#3B3030] w-full h-[100vh]'>
-      <ClockAnimation >
-        <TileBoard />
-      </ClockAnimation>
-    </div>
+    <>
+      <ClockAnimation />
+    </>
   )
 }
 

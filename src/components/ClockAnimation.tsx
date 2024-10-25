@@ -4,6 +4,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import ilham from "../assets/ilham.jpg"
+import TileBoard from "./TileBoard"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,7 +16,7 @@ const introHeaders = [
   "view my work",
 ]
 
-const ClockAnimation = ({children} : {children : React.ReactNode}) => {
+const ClockAnimation = () => {
   const [headerText, setHeaderText] = useState(introHeaders[0])
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -102,8 +103,10 @@ const ClockAnimation = ({children} : {children : React.ReactNode}) => {
           const revealProgress = (progress - 7.5 / 8) / (0.5 / 8)
           const newOpacity = gsap.utils.interpolate(0, 1, revealProgress)
           gsap.set(".website-content", { opacity: newOpacity })
+          gsap.set(".hand", { opacity: 0 })
         } else {
           gsap.set(".website-content", { opacity: 0 })
+          gsap.set(".hand", { opacity: 1 })
         }
       }
     })
@@ -118,7 +121,7 @@ const ClockAnimation = ({children} : {children : React.ReactNode}) => {
   return (
     <>
       <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
-        <div className='container w-full mx-auto' ref={containerRef}>
+        <div className='container w-full mx-auto max-w-full h-screen' ref={containerRef}>
           <section className='main bg-[#161616] w-full h-screen' >
             <div className="hand-container absolute top-1/2 left-1/2 w-96 h-[740px] flex justify-center transform -translate-x-1/2 -translate-y-1/2 items-start origin-center transform-preserve-3d z-10 ">
               <div className="hand absolute w-[11%] h-[55%] bg-white rounded-full overflow-hidden">
@@ -133,7 +136,7 @@ const ClockAnimation = ({children} : {children : React.ReactNode}) => {
             </div>
 
             <div className="website-content opacity-0">
-              {children}
+              <TileBoard />
             </div>
           </section>
         </div>
