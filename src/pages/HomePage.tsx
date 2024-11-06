@@ -10,6 +10,8 @@ const HomePage = () => {
   return (
     <>
       <ClockAnimation />
+      {/* <TileBoard /> */}
+      <div>tes</div>
     </>
   )
 }

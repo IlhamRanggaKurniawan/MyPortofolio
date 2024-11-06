@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react"
-import { ReactLenis } from "@studio-freight/react-lenis"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
+import React, { useRef, useState } from 'react'
 import ilham from "../assets/ilham.jpg"
-import TileBoard from "./TileBoard"
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
+import TileBoard from './TileBoard'
+import ReactLenis from '@studio-freight/react-lenis'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -102,13 +102,13 @@ const ClockAnimation = () => {
         if (progress > 7.5 / 8) {
           const revealProgress = (progress - 7.5 / 8) / (0.5 / 8)
           const newOpacity = gsap.utils.interpolate(0, 1, revealProgress)
-          gsap.set(".website-content", { opacity: newOpacity })
+          gsap.set(".website-content", { opacity: newOpacity > 0.3 ? newOpacity + 0.2 : newOpacity })
           gsap.set(".hand", { opacity: 0 })
         } else {
           gsap.set(".website-content", { opacity: 0 })
           gsap.set(".hand", { opacity: 1 })
         }
-      }
+      },
     })
 
     updateHeaderText()
@@ -119,29 +119,27 @@ const ClockAnimation = () => {
   }, { scope: containerRef })
 
   return (
-    <>
-      <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
-        <div className='container w-full mx-auto max-w-full h-screen' ref={containerRef}>
-          <section className='main bg-[#161616] w-full h-screen' >
-            <div className="hand-container absolute top-1/2 left-1/2 w-96 h-[740px] flex justify-center transform -translate-x-1/2 -translate-y-1/2 items-start origin-center transform-preserve-3d z-10 ">
-              <div className="hand absolute w-[11%] h-[55%] bg-white rounded-full overflow-hidden">
-                <img src={ilham} className="img w-full h-full object-cover opacity-0" />
-              </div>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+      <div className='w-full overflow-x-hidden' ref={containerRef}>
+        <section className="main bg-[#161616] w-full overflow-hidden">
+          <div className='hand-container absolute top-1/2 left-1/2 w-12 h-[740px] flex justify-center transform -translate-x-1/2 -translate-y-1/2 items-start z-10 '>
+            <div className='hand abs bg-white rounded-full w-full h-full overflow-hidden '>
+              <img src={ilham} className="img w-full h-full object-cover opacity-0 " />
             </div>
-            <div className='intro absolute top-1/2 -mt-5 right-1/4 w-[22.5%]' >
-              <h1 className="header-text text-[27px] font-medium w-fit text-white"><span className="header-span text-[#6e6e6e]">time to</span> {headerText}</h1>
-              <div>
-                <p className="text text-[16px] font-medium text-slate-400 relative mt-3 translate-x-5 opacity-0">Meet Ilham Rangga Kurniawan, a passionate full-stack developer with a keen focus on web development. With a strong foundation in both front-end and back-end technologies, Ilham thrives on creating intuitive and efficient web applications. In addition to programming, he enjoys gaming, which fuels his creativity and problem-solving skills. His ultimate goal is to establish a company that breaks through the limits of technology, leveraging innovation to push boundaries and create impactful solutions</p>
-              </div>
-            </div>
+          </div>
 
-            <div className="website-content opacity-0">
-              <TileBoard />
-            </div>
-          </section>
-        </div>
-      </ReactLenis>
-    </>
+          <div className='intro absolute top-1/2 left-1/2 -mt-5 w-[300px] transform translate-x-[30px]'>
+            <h1 className="header-text text-[20px] lg:text-[27px] font-medium text-white"><span className="header-span text-[#6e6e6e]">time to</span> {headerText}</h1>
+            <div>
+              <p className="text text-[14px] lg:text-[16px] font-medium text-slate-400 relative mt-3 opacity-0 ">Meet Ilham Rangga Kurniawan, a passionate full-stack developer with a keen focus on web development. With a strong foundation in both front-end and back-end technologies, Ilham thrives on creating intuitive and efficient web applications. In addition to programming, he enjoys gaming, which fuels his creativity and problem-solving skills. His ultimate goal is to establish a company that breaks through the limits of technology, leveraging innovation to push boundaries and create impactful solutions</p>            </div>
+          </div>
+
+          <div className="website-content opacity-0 w-full -z-40">
+            <TileBoard />
+          </div>
+        </section>
+      </div>
+    </ReactLenis>
   )
 }
 
