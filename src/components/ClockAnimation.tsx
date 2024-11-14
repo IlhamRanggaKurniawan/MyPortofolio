@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import ilham from "../assets/ilham.jpg"
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -128,7 +128,7 @@ const ClockAnimation = () => {
             </div>
           </div>
 
-          <div className='intro absolute top-1/2 left-1/2 -mt-5 w-[300px] transform translate-x-[30px]'>
+          <div className='intro absolute top-1/2 left-1/2 -mt-5 w-[280px] transform translate-x-[30px]'>
             <h1 className="header-text text-[20px] lg:text-[27px] font-medium text-white"><span className="header-span text-[#6e6e6e]">time to</span> {headerText}</h1>
             <div>
               <p className="text text-[14px] lg:text-[16px] font-medium text-slate-400 relative mt-3 opacity-0 ">Meet Ilham Rangga Kurniawan, a passionate full-stack developer with a keen focus on web development. With a strong foundation in both front-end and back-end technologies, Ilham thrives on creating intuitive and efficient web applications. In addition to programming, he enjoys gaming, which fuels his creativity and problem-solving skills. His ultimate goal is to establish a company that breaks through the limits of technology, leveraging innovation to push boundaries and create impactful solutions</p>            </div>
