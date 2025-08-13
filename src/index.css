@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer components {
+    .px-section {
+        @apply px-4 sm:px-6 lg:px-8 xl:px-24
+    }
+
+    .grid-default-color {
+        @apply p-6 bg-gradient-to-b from-[#282b4b] to-[#1f1e39] rounded-2xl;
+    }
+
+    .grid-special-color {
+        @apply p-6 bg-gradient-to-b from-[#5c33cc] to-[#7a57db] rounded-2xl;
+    }
+
+    .grid-black-color {
+        @apply p-6 bg-gradient-to-tl from-[#3A3A3A] via-[#242424] to-[#3A3A3A] rounded-2xl;
+    }
+}
+
+@theme inline {
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+ 
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+}
